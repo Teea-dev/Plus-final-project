@@ -39,15 +39,13 @@ function displayForecast(response) {
     if (index < 6) {
       forecastDays =
         forecastDays +
-        
         `<div class="col-2">
                   ${formate(forecastDay.dt)}
                   ${index}
                   <img
                     src='http://openweathermap.org/img/wn/${
                       forecastDay.weather[0].icon
-                    }@2x.png'
-                  />
+                    }@2x.png' width="50"                  />
                   <span class="max">${Math.round(
                     forecastDay.temp.max
                   )}°</span> <span class="min">${Math.round(
@@ -77,7 +75,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°c`;
+  temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}`;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
