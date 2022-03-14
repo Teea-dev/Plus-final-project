@@ -22,41 +22,37 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function formate(timestamp){
-    let date = new Date(timestamp * 1000);
-    let day = date.getDay();
-    let days = [
-      "Sun",
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu",
-      "Fri",
-      "Sat",
-    ];
-    return days[day];
+function formate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 function displayForecast(response) {
   let forecast = response.data.daily;
 
-
   let forecastElement = document.querySelector("#forecast");
 
-
   forecastDays = `<div class="row">`;
-  forecast.forEach(function (forecastDay ,index) {
-    if (index < 6){
-
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
       forecastDays =
         forecastDays +
+        
         `<div class="col-2">
                   ${formate(forecastDay.dt)}
                   ${index}
                   <img
-                    src='http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png'
+                    src='http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png'
                   />
-                  <span class="max">${Math.round(forecastDay.temp.max)}°</span> <span class="min">${Math.round(forecastDay.temp.min)}°</span>
+                  <span class="max">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span> <span class="min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
                 </div>
               `;
     }
@@ -81,9 +77,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.main.temp;
-
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°c`;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
