@@ -1,8 +1,7 @@
-body {
+body{
   font-family: arial, sans-serif;
-  background-color: #a2a8d3; 
+  background-color: darkgray;
 }
-
 h1 {
   color: #272142;
   font-size: 24px;
@@ -40,6 +39,7 @@ li:first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background-color: #a2a8d3;
 }
 
 .overview {
@@ -53,7 +53,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color:  #272142;
+  color: #272142;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -84,21 +84,20 @@ li:first-letter {
   font-size: 16px;
   opacity: 0.5;
 }
-#humidty{
-   position: relative;
-   left: -20px;
-   
+#humidty {
+  position: relative;
+  left: -20px;
 }
-.max{
+.max {
   color: rgb(246, 82, 130);
 }
 .min {
-  color: rgba(246, 82, 130 ,0.5) ;
+  color: rgba(246, 82, 130, 0.5);
 }
 
 .weather-forecast-temperatures {
   font-size: 13px;
 }
-.author{
-    color:#272142;
+.author {
+  color: #272142;
 }
